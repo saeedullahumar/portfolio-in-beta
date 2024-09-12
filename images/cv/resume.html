@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Specifies the character encoding for the HTML document -->
+    <meta charset="UTF-8">
+    <!-- Ensures proper rendering and touch zooming on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage, displayed in the browser tab -->
+    <title>Saeed Ullah Resume</title>
+    <!-- Link to an external stylesheet from Font Awesome for using icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General styles for the entire document */
+        body {
+            font-family: Arial, sans-serif;
+            /* Font style */
+            color: #333;
+            /* Text color */
+            line-height: 1.5;
+            /* Line spacing */
+            margin: 0;
+            /* Remove default margin */
+            padding: 0;
+            /* Remove default padding */
+            background-color: #d0d0d0;
+            /* Background color */
+        }
+
+        /* Styles for the main container */
+        .container {
+            max-width: 900px;
+            /* Maximum width */
+            margin: 20px auto;
+            /* Center the container */
+            padding: 20px;
+            /* Padding inside the container */
+            background: #f9f9f9;
+            /* Background color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Box shadow for a subtle 3D effect */
+            position: relative;
+            /* Position relative to control absolute positioning of child elements */
+        }
+
+        /* Flex container for content sections */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            /* Distribute space between sections */
+        }
+
+        /* Header styles */
+        header {
+            text-align: left;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        header h2 {
+            width: fit-content;
+            font-size: 24px;
+            color: #1399c6;
+            margin: 0;
+            border-bottom: 1px solid #096192;
+            padding-bottom: 1px;
+        }
+
+        /* Contact information section styles */
+        .contact-info {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+        }
+
+        .contact-info p {
+            margin: 10px 6px;
+            font-size: 14px;
+            color: #282828;
+        }
+
+        .contact-info p i {
+            font-size: 16px;
+        }
+
+        .contact-info div p i {
+            font-size: 17px;
+        }
+
+        .contact-info .git p i {
+            font-size: 17px;
+        }
+
+        .contact-info .phone p i {
+            font-size: 15.5px;
+            transform: translateX(-7px);
+        }
+
+        p span {
+            position: relative;
+            /* Ensure it respects the transform */
+            left: -6px;
+            /* Move it left */
+        }
+
+        /* .contact-info div p{
+            color: #1171ba;
+        } */
+
+        .contact-info a {
+            color: #24aae2;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        /* Style for each section */
+        section {
+            flex: 1;
+            /* Allow sections to grow and fill available space */
+            margin-bottom: 20px;
+        }
+
+        /* Section headings */
+        section h2 {
+            width: fit-content;
+            font-size: 24px;
+            margin-top: 30px;
+            color: #096192;
+            border-bottom: 2px solid #1399c6;
+            padding-bottom: 5px;
+        }
+
+        /* Subheadings within sections (like job titles) */
+        section h3 {
+            font-size: 20px;
+            /* Font size */
+            margin-top: 20px;
+            /* Space above subheading */
+            color: #34495e;
+            /* Text color */
+        }
+
+        /* Unordered list styles */
+        ul {
+            list-style-type: none;
+            /* Remove default bullet points */
+            margin: 10px 0 20px 0;
+            /* Margins for the list */
+            padding: 0;
+            /* Remove default padding */
+        }
+
+        /* List items within unordered lists */
+        ul li {
+            margin-bottom: 10px;
+            /* Space below each list item */
+            position: relative;
+            /* Positioning for custom bullet points */
+            padding-left: 25px;
+            /* Space to the left of the text */
+        }
+
+        /* Custom bullet point using Font Awesome check icon */
+        ul li::before {
+            content: "\f00c";
+            /* Unicode for Font Awesome check icon */
+            font-family: "Font Awesome 5 Free";
+            /* Font family for icons */
+            position: absolute;
+            /* Position relative to list item */
+            left: 0;
+            /* Align to the left edge */
+            color: #24aae2;
+            /* Icon color */
+            font-weight: 900;
+            /* Bold icon */
+        }
+
+        /* General anchor link styles */
+        a {
+            color: #2980b9;
+            /* Link color */
+            text-decoration: none;
+            /* Remove underline */
+        }
+
+        /* Hover effect for general links */
+        a:hover {
+            text-decoration: underline;
+            /* Underline on hover */
+        }
+
+        /* Bold text color within paragraphs */
+        strong {
+            color: #34495e;
+            /* Text color */
+        }
+
+        /* --------------------------------------------skills-------------------------- */
+
+        /* Skills section */
+        #skills-section {
+            width: 300px;
+            /* Set a fixed width for the skills section */
+            order: 2;
+            /* Ensure the skills section is on the right side */
+        }
+
+        /* Skills container to hold all skill boxes */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* Style for each skill box */
+        .skill-box {
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 13px;
+            flex: 0 1 auto;
+            text-align: center;
+            white-space: nowrap;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Next section */
+        #professional-experience-section {
+            flex: 1;
+            /* Allow this section to take up remaining space */
+            order: 1;
+            /* Ensure this section is on the left side */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main container for the content -->
+    <div class="container">
+        <!-- Header section -->
+        <header>
+            <!-- Main title of the resume -->
+            <h1>SAEED ULLAH </h1>
+            <!-- Subtitle describing the profession -->
+            <h2>Linux System Administrator</h2>
+            <!-- Contact information -->
+            <div class="contact-info">
+
+                <div>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-linkedin">&nbsp;</i> <a
+                            href="https://www.linkedin.com/in/linuxadmin-saeedullah/">My LinkedIn
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+                </div>
+
+                <p><i class="fas fa-envelope">&nbsp;</i> <a href="mailto:saeedullahdesigner@gmail.com">My
+                        Gmail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+
+
+
+                <div class="git">
+                    <p>&nbsp;&nbsp;<i class="fab fa-github">&nbsp;</i> <a href="https://github.com/saeedullahumar">My
+                            GitHub&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+                </div>
+
+
+                <div class="phone">
+                    <p><i class="fas fa-phone"></i><span> +923155953856&nbsp;</span></p>
+                </div>
+
+
+            </div>
+            <!-- <section> -->
+            <!-- <h2><i class="fas fa-user"></i> SUMMARY</h2> -->
+
+            <!-- <p>Experienced Linux System Administrator skilled in optimizing system performance, automating tasks, and driving technical improvements to support organizational growth. Committed to solving complex problems and collaborating with diverse teams to achieve seamless operations.</p> -->
+            <!-- </section> -->
+
+        </header>
+
+        <!-- Summary section -->
+        <section>
+            <!-- <h2><i class="fas fa-user"></i> SUMMARY</h2> -->
+            <!-- Summary description -->
+            <p>Experienced Linux System Administrator skilled in optimizing system performance, automating tasks, <br>
+                and driving technical improvements to support organizational growth. Committed to solving complex <br>
+                problems and collaborating with diverse teams to achieve seamless operations.</p>
+        </section>
+
+        <!-- Skills section -->
+        <div class="content">
+            <section id="skills-section">
+                <h2>SKILLS</h2>
+                <div class="skills-container">
+                    <div class="skill-box">Windows Server</div>
+                    <div class="skill-box">Linux Server</div>
+                    <div class="skill-box">Troubleshooting Kernel Panic Mode</div>
+                    <div class="skill-box">LVM</div>
+                    <div class="skill-box">Nginx</div>
+                    <div class="skill-box">Apache</div>
+                    <div class="skill-box">Tomcat</div>
+                    <div class="skill-box">Networking</div>
+                    <div class="skill-box">Nagios</div>
+                    <div class="skill-box">Zabbix</div>
+                    <div class="skill-box">Install and Configure Softwares</div>
+                    <div class="skill-box">FSTAB</div>
+                    <div class="skill-box">Symlinks and Hardlinks</div>
+                    <div class="skill-box">Archiving and Compression</div>
+                    <div class="skill-box">Docker</div>
+                    <div class="skill-box">Git</div>
+                    <div class="skill-box">MS Office</div>
+                    <div class="skill-box">Python</div>
+                    <div class="skill-box">Bash Scripting</div>
+                    <div class="skill-box">HTML</div>
+                    <div class="skill-box">CSS</div>
+                    <div class="skill-box">JavaScript</div>
+                    <div class="skill-box">AWS</div>
+                </div>
+            </section>
+
+            <!-- professional Experience section -->
+
+
+            <section id="professional-experience-section">
+                <h2><i class="fas fa-briefcase"></i> PROFESSIONAL EXPERIENCE</h2>
+                <h4>Alnafi.cloud&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;2023 -
+                    Present&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Remote)
+                </h4>
+                <!-- <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A US based company</h5> -->
+                <!-- Job title and location -->
+                <ul>
+                    <li>Designed and implemented Logical Volume Management (LVM) partitions according to specific
+                        project requirements, optimizing storage utilization and system performance.</li>
+                    <li>Managed hosting diverse web pages, including static, dynamic, and e-commerce sites, using
+                        Apache, resulting in seamless user experiences and improved site performance.</li>
+                    <li>Expertly troubleshooted various issues across multiple Linux distributions in both emergency and
+                        standard modes, ensuring minimal downtime and maintaining system stability.</li>
+                    <li>Provided guidance and support to junior team members in troubleshooting various Linux
+                        distribution issues, fostering a collaborative learning environment, and enhancing team
+                        productivity.</li>
+                </ul>
+            </section>
+        </div>
+
+        <section>
+            <h2><i class="fas fa-graduation-cap"></i> EDUCATION</h2>
+            <p><strong>Institute of Computer Management and Sciences (ICMS)</strong></p> <!-- Institution name -->
+            <p>Intermediate in Computer Science&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; 2022 – 2023</p> <!-- Degree and year -->
+            <p><strong>Alnafi</strong></p> <!-- Another institution name -->
+            <p>Diploma in Linux System Administration&nbsp;&nbsp; |&nbsp;&nbsp; 2023 – 2024 </p>
+            <!-- Diploma and year -->
+        </section>
+
+
+
+
+
+        <!-- Personal Skills section -->
+        <section>
+            <h2><i class="fas fa-users"></i> PERSONAL STRENGTHS</h2>
+            <ul>
+                <!-- List of personal skills with matching icons -->
+                <li><i class="fas fa-users"></i> Strong team management and collaboration abilities</li>
+                <li><i class="fas fa-comments"></i> Effective counseling and communication skills</li>
+                <li><i class="fas fa-puzzle-piece"></i> Proficient problem-solving and troubleshooting skills</li>
+                <li><i class="fas fa-book-open"></i> Quick learner and adaptable to new technologies</li>
+                <li><i class="fas fa-check-circle"></i> A detail-oriented and organized approach to work</li>
+            </ul>
+
+        </section>
+
+
+        <!-- Certifications section -->
+        <section>
+            <h2><i class="fas fa-award"></i> CERTIFICATIONS</h2>
+            <ul>
+                <!-- List of certifications -->
+                <li>Linux RHEL Intensive Boot Camp</li>
+                <li>CISSP</li>
+                <li>RHCSA Training</li>
+                <li>AWS Training</li>
+            </ul>
+        </section>
+        <!-- Projects section -->
+        <section>
+            <h2><i class="fas fa-project-diagram"></i> PROJECTS</h2>
+            <ul>
+                <li>Implemented a secure and scalable web hosting environment...</li>
+                <li>Automated system backups and monitoring using Python scripts...</li>
+                <li>Developed a custom Docker image for deploying applications...</li>
+            </ul>
+        </section>
+
+        <!-- Hobbies and Interests section -->
+        <section>
+            <h2><i class="fas fa-heart"></i> HOBBIES & INTERESTS</h2>
+            <ul>
+                <li><i class="fas fa-gamepad"></i> Gaming</li>
+                <li><i class="fas fa-book"></i> Reading</li>
+                <li><i class="fas fa-biking"></i> Cycling</li>
+            </ul>
+        </section>
+
+        <!-- Education section -->
+        <style>
+            section p {
+                margin: 0;
+                padding: 0;
+            }
+
+            section p+p {
+                margin-top: 7px;
+                /* Adjust this value as needed */
+            }
+
+            section p strong {
+                font-size: 16px;
+                font-weight: bold;
+            }
+        </style>
+
+
+    </div>
+</body>
+
+</html>
