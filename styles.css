@@ -253,7 +253,7 @@ nav ul li a:hover {
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
-    border: #4B6587 1px solid;
+    border: #4B6587 2px solid;
     background-color: #2626260a;
     color: white;
     cursor: pointer;
