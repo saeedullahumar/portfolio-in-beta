@@ -288,7 +288,7 @@ nav ul li a:hover {
     color: #ababab;
 }
 
-#about .sub-title{
+#about .sub-title {
     margin-top: -10px;
     margin-bottom: -15px;
 }
@@ -397,7 +397,7 @@ nav ul li a:hover {
     /* font-weight: 600; */
 }
 
-.jobtitle{
+.jobtitle {
     color: #e4e5e7;
 }
 
@@ -419,7 +419,7 @@ nav ul li a:hover {
 
 #services .sub-title {
     margin-top: 40px;
-    margin-bottom: -20px; 
+    margin-bottom: -20px;
 }
 
 .services-list {
@@ -430,12 +430,13 @@ nav ul li a:hover {
 }
 
 .services-list div {
-    background: #262626;
+    /* background: #262626; */
     padding: 42px;
     font-size: 12px;
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .services-list div i {
@@ -462,10 +463,12 @@ nav ul li a:hover {
 .services-list div:hover {
     /* background: #007BFF ; */
     background: #007BFF;
+    background: transparent;
     /* transform: translateY(-10px); */
-    transform: translate3d(5px, -12px, 0);
-    box-shadow: -10px 12px 40px rgba(0, 123, 255, 0.144); /* Neon green glow */
-    
+    transform: translate3d(5px, -12px, 0) scale3d(1.1, 1.1, 1);
+    box-shadow: 0px 12px 40px rgba(0, 123, 255, 0.329) ;
+    /* Neon green glow */
+
 }
 
 
@@ -576,6 +579,7 @@ nav ul li a:hover {
     margin-top: 35px;
     margin-bottom: -20px;
 }
+
 .contact-left {
     flex-basis: 35%;
 }
@@ -708,9 +712,10 @@ nav .fas {
     }
 
     .magneto {
-        display: none;
+      display: none;
     }
 
+  
 
     /* -------------------------------------------------------end changes---------------------- */
     .logo {
@@ -750,11 +755,11 @@ nav .fas {
         color: #fff;
         /* display: none; */
         font-size: 15px;
-        
+
     }
 
     nav ul li a:hover {
-        background-color: transparent; 
+        background-color: transparent;
         transform: none;
         box-shadow: none;
     }
@@ -798,8 +803,9 @@ nav .fas {
         background: #007BFF;
         /* transform: translateY(-10px); */
         transform: translate3d(4px, -10px, 0);
-        box-shadow: -10px 12px 40px rgba(0, 123, 255, 0.144); /* Neon green glow */
-        
+        box-shadow: -10px 12px 40px rgba(0, 123, 255, 0.144);
+        /* Neon green glow */
+
     }
 
 
