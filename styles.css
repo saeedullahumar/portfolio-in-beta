@@ -76,6 +76,8 @@ nav {
 
 .logo {
     width: 148px;
+    margin-left: -26px;
+    margin-top: 5px;
 }
 
 nav ul li {
@@ -818,6 +820,9 @@ nav .fas {
     /* -------------------------------------------------------end changes---------------------- */
     .logo {
         width: 100px;
+        margin-left: -22px;
+        margin-top: 5px;
+        
     }
 
     nav .fas {
