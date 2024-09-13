@@ -145,7 +145,7 @@ nav ul li a:hover {
 
 .header-text h1 {
     font-size: 54px;
-    margin-top: 20px;
+    margin-top: -15px;
     font-weight: 600;
 }
 
@@ -160,12 +160,14 @@ nav ul li a:hover {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translate3d(180px, 0px, 0px);
+        transform: translate3d(-400px, 0px, 0px) scale(0.6);
+        /* transform: scale(0.5) */
     }
 
     to {
         opacity: 1;
-        transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px) scale(1);
+        /* transform: scale(1) */
     }
 }
 
@@ -174,78 +176,43 @@ nav ul li a:hover {
     animation: fadeIn 3s ease-in-out;
 }
 
-.header-text span {
+.header-text h1 span {
     color: #007BFF;
     /* animation: fadeIn 2s ease-in-out; */
 }
 
-
-/* ----------------------------------my changes------------------ */
-/* Hide text initially (start with 0 width) */
-.typing-text {
-    width: 0;
-    border-right: 1px solid #007BFF;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-/* When typing-start is added, apply typing effect */
-.typing-text.typing-start {
-    animation: typing 6s steps(30, end) 1 forwards, blink-caret 0.75s step-end infinite;
-}
-
-.typing-container {
-    display: inline-block;
+h2 {
+    font-size: 2rem;
+    letter-spacing: -1.28px;
+    /* margin: 7.12px;  */
+    padding: 3.56px;
     position: relative;
-    margin-bottom: 3rem;
-}
-
-.typing-text {
-    font-size: 25px;
-    font-weight: 300;
-    color: #fff;
-}
-
-.typing-text span {
+    font-weight: 500;
+    /* margin-right: 620px; */
+    margin-top: 50px;
     color: #00D977;
 }
 
-@keyframes typing {
-    from {
-        width: 0;
-    }
 
-    to {
-        width: 100%;
-    }
+
+#cursor {
+    color: #fff;
 }
 
-@keyframes blink-caret {
+/* #cursor {
+			animation: 1.2s infinite steps(1) blink;
+		} */
+@keyframes blink {
 
-    from,
-    to {
-        border-color: transparent;
+    0%,
+    100% {
+        opacity: 0;
     }
 
     50% {
-        border-color: #fff;
+        opacity: 1;
     }
 }
-
-
-
-
-/* Repeating Animation */
-/* .typing-text {
-    font-size: 30px; 
-    font-weight: 300; 
-    color: #fff; 
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid #007BFF; 
-    animation: typing 7s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
-}
-     */
 
 
 /* ============================================== new button========================== */
@@ -263,9 +230,10 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease-in-out;
-    position: absolute;
-    bottom: 21rem;
-    left: 11.5rem;
+    position: relative;
+    bottom: -2rem;
+    left: 0rem;
+    right: 0rem;
 }
 
 /* Hover effect */
@@ -722,7 +690,7 @@ form .btn2 {
     color: #fff;
 }
 
-.copyright-name{
+.copyright-name {
     color: #00D977;
     font-size: 16px;
 }
@@ -750,7 +718,7 @@ nav .fas {
     }
 
     /* Add keyframes for the fade-in animation */
-    @keyframes fadeIn {
+    /* @keyframes fadeIn {
         from {
             opacity: 0;
             transform: translate3d(40px, 0px, 0px);
@@ -760,54 +728,44 @@ nav .fas {
             opacity: 1;
             transform: translate3d(0px, 0px, 0px);
         }
+    } */
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translate3d(-100px, 0px, 0px) scale(0.6);
+            /* transform: scale(0.5) */
+        }
+
+        to {
+            opacity: 1;
+            transform: translate3d(0px, 0px, 0px) scale(1);
+            /* transform: scale(1) */
+        }
     }
+
 
     /* Apply the fade-in animation to the heading */
     .header-text h1 {
         animation: fadeIn 3s ease-in-out;
     }
 
-    .header-text span {
+    .header-text h1 span {
         color: #007BFF;
         /* animation: fadeIn 2s ease-in-out; */
     }
 
     /* ----------------changes---------------- */
-    .typing-text {
-        width: 0;
-        border-right: 1px solid #007BFF;
-        white-space: nowrap;
-        overflow: hidden;
-    }
 
-    /* When typing-start is added, apply typing effect */
-    .typing-text.typing-start {
-        animation: typing 6s steps(30, end) 1 forwards, blink-caret 0.75s step-end infinite;
-    }
-
-    /* .typing-container {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        height: 100%;
-
-    } */
-
-    .typing-text {
-        font-size: 14px;
-
-        font-weight: 200;
-
-        color: #fff;
-
-        /* white-space: nowrap; */
-        /* overflow: hidden; */
-        border-right: 1px solid #fff;
-
-        /* animation: typing 8s steps(40), blink-caret 0.75s step-end infinite; */
-    }
-
-    .typing-text span {
+    h2 {
+        font-size: 1.3rem;
+        letter-spacing: -1.1px;
+        /* margin: 7.12px;  */
+        padding: 3.56px;
+        position: relative;
+        font-weight: 600;
+        /* margin-right: 620px; */
+        margin-top: 50px;
         color: #00D977;
     }
 
@@ -822,7 +780,7 @@ nav .fas {
         width: 100px;
         margin-left: -22px;
         margin-top: 5px;
-        
+
     }
 
     nav .fas {
@@ -831,7 +789,7 @@ nav .fas {
     }
 
     nav ul {
-        background: #00d977c0;
+        background: #007bffbe;
         position: fixed;
         top: 0;
         right: -200px;
