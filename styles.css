@@ -183,7 +183,7 @@ nav ul li a:hover {
 
 h2 {
     font-size: 2rem;
-    letter-spacing: -1.28px;
+    letter-spacing: -1.1px;
     /* margin: 7.12px;  */
     padding: 3.56px;
     position: relative;
@@ -197,6 +197,7 @@ h2 {
 
 #cursor {
     color: #fff;
+    /* font-weight: 500; */
 }
 
 /* #cursor {
@@ -222,7 +223,7 @@ h2 {
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
-    border: #4B6587 2px solid;
+    border: #4B6587 6px solid;
     background-color: #2626260a;
     color: white;
     cursor: pointer;
@@ -231,8 +232,8 @@ h2 {
     align-items: center;
     transition: background-color 0.3s ease-in-out;
     position: relative;
-    bottom: -2rem;
-    left: 0rem;
+    bottom: 5rem;
+    left: 22rem;
     right: 0rem;
 }
 
@@ -759,7 +760,7 @@ nav .fas {
 
     h2 {
         font-size: 1.3rem;
-        letter-spacing: -1.1px;
+        letter-spacing: -0.4px;
         /* margin: 7.12px;  */
         padding: 3.56px;
         position: relative;
