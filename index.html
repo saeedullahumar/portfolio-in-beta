@@ -79,7 +79,7 @@
                     <!-- <img src="images//about-user-pic/user.png"> -->
                 </div>
                 <div class="about-col-2">
-                    <h1 class="sub-title magneto-h1" data-magneto-strength="40" data-magneto-text-strength="40">
+                    <h1 class="sub-title magneto-h1" data-magneto-strength="80" data-magneto-text-strength="40">
                         <span class="text">ABOUT ME</span>
                     </h1>
                     <p>I’m a Linux System Administrator with a deep interest in DevOps and a solid foundation in AWS
@@ -151,7 +151,7 @@
     <!-- ------------------------MY SERVICES---------------------------- -->
     <div id="services">
         <div class="container">
-            <h1 class="sub-title magneto-h1" data-magneto-strength="40" data-magneto-text-strength="40">
+            <h1 class="sub-title magneto-h1" data-magneto-strength="80" data-magneto-text-strength="40">
                 <span class="text">SERVICES</span>
             </h1>
             <div class="services-list">
@@ -187,7 +187,7 @@
     <!-- ------------------------portfolio------------------------------ -->
     <div id="portfolio">
         <div class="container">
-            <h1 class="sub-title magneto-h1" data-magneto-strength="40" data-magneto-text-strength="40">
+            <h1 class="sub-title magneto-h1" data-magneto-strength="80" data-magneto-text-strength="40">
                 <span class="text">WORK
 
                 </span>
@@ -242,8 +242,8 @@
         <div class="container">
             <div class="row">
                 <div class="contact-left">
-                    <h1 class="sub-title magneto-h1" data-magneto-strength="40" data-magneto-text-strength="28">
-                        <span class="text">CONTACT ME
+                    <h1 class="sub-title magneto-h1" data-magneto-strength="80" data-magneto-text-strength="40">
+                        <span class="text">CONTACT
 
                         </span>
                     </h1>
@@ -444,7 +444,7 @@
 
         // Apply magneto effect to the button
         if (magneto && magnetoText) {
-            magneto.addEventListener('mousemove', (event) => activateMagneto(magneto, magnetoText, event, 30, 40));
+            magneto.addEventListener('mousemove', (event) => activateMagneto(magneto, magnetoText, event, 80, 30));
             magneto.addEventListener('mouseleave', () => resetMagneto(magneto, magnetoText));
         }
 
@@ -464,7 +464,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
 
     <script>
-		const words = ['DevOps Engineer', 'Cloud Engineer', 'Linux Admin', 'Frontend Developer']
+		const words = ['DevOps Engineer /', 'Cloud Engineer /', 'Linux Admin /', 'Frontend Developer /']
 
 		//Main timeline
 		let mainTimeline = gsap.timeline({
@@ -508,6 +508,7 @@
 		cursorTimeline.to('#cursor', {
 			opacity: 1,
 			duration: 0
+            // delay: 2
 		}).to('#cursor', {
 			opacity: 0,
 			duration: 0,

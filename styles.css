@@ -217,14 +217,12 @@ h2 {
 
 
 /* ============================================== new button========================== */
-
 .magneto {
-    /* font-size: small; */
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    border: #4B6587 6px solid;
-    background-color: #2626260a;
+    /* Original properties */
+    width: 8rem;
+    height: 4rem;
+    border-radius: 100px;
+    background-color: #ff005128;
     color: white;
     cursor: pointer;
     display: flex;
@@ -232,28 +230,74 @@ h2 {
     align-items: center;
     transition: background-color 0.3s ease-in-out;
     position: relative;
-    bottom: 5rem;
-    left: 22rem;
+    bottom: -2rem;
+    left: 0rem;
     right: 0rem;
+    border: none;
+    outline: none;
+    animation: none;
+}
+
+/* Create the rotating border using a pseudo-element */
+.magneto::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border-top: 1px solid #007BFF; 
+    border-radius: 100px;
+    animation: spin 1s linear infinite;
 }
 
 /* Hover effect */
 .magneto:hover {
     background-color: #ff0051a2;
-    /* Change to blue on hover */
-    border: none;
+    
+}
+
+/* Stop the rotation on hover without resetting the position */
+.magneto:hover::before {
+    animation-play-state: paused; /* Pauses the animation at the current position */
 }
 
 .magneto .text {
+    letter-spacing: 0.07rem;
     transition: color 0.3s ease-in-out;
-    /* Smooth color transition */
+    animation: breathe 2s ease-in-out infinite;
+ 
 }
 
 /* Change text color on hover */
 .magneto:hover .text {
     color: #fff;
-    /* You can set this to another color if needed */
+    animation: none;
 }
+
+/* Circular spinning border animation */
+/* @keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} */
+
+/* Breathing keyframes */
+@keyframes breathe {
+    0%,
+    100% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+
+
+
 
 
 
@@ -269,8 +313,8 @@ h2 {
 }
 
 #about .sub-title {
-    margin-top: -10px;
-    margin-bottom: -15px;
+    margin-top: 8px;
+    margin-bottom: -10px;
 }
 
 .row {
@@ -298,10 +342,10 @@ h2 {
 
 .magneto-h1 {
     font-size: medium;
-    width: 10rem;
-    height: 5rem;
-    border-radius: 50px;
-    border: 2px solid #00D977;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    border: 3px solid #00D977;
     background-color: white;
     /* Default background color */
     color: black;
@@ -652,7 +696,7 @@ form textarea {
     margin: 12px 0;
     color: #fff;
     font-size: 14px;
-    border-radius: 12px;
+    border-radius: 6px;
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -705,7 +749,7 @@ nav .fas {
 
 @media only screen and (max-width: 600px) {
     #header {
-        background-image: url(images/backgroud/Untitled\ \(3375\ x\ 6000\ px\).png);
+        /* background-image: url(images/backgroud/Untitled\ \(3375\ x\ 6000\ px\).png); */
     }
 
     .header-text {
@@ -937,20 +981,21 @@ nav .fas {
     .contact-left,
     .contact-right {
         flex-basis: 100%;
+        margin-top: 30px;
     }
 
     form input,
     form textarea {
-        width: 90%;
+        width: 100%;
         resize: none;
         border: 0;
         outline: none;
         background: #262626;
-        padding: 12px;
-        margin: 12px 0;
+        padding: 8px;
+        margin: 10px 0;
         color: #fff;
         font-size: 14px;
-        border-radius: 8px;
+        border-radius: 4px;
     }
 
     form .btn2 {
