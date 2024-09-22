@@ -78,6 +78,43 @@ body.loaded {
     /* position: relative; */
 }
 
+
+#our-work {
+    text-align: center;
+    color: #fff;
+    margin-top: -120px;
+    margin-bottom: 60px;
+}
+
+#our-work svg {
+    animation: 5s cubic-bezier(.87, -0.41,.19, 1.44) infinite point-down;
+    fill: #007BFF;
+}
+
+#learn-more-mobile {
+    display: none;
+}
+
+#our-work p {
+    margin-bottom: .5rem;
+}
+#our-work p a{
+    color: white;
+    text-decoration: none;
+}
+
+
+@keyframes point-down {
+    0%, 10%, 40%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate3d(0, 1rem, 0);
+    }
+}
+
+
 nav {
     display: flex;
     align-items: center;
@@ -684,7 +721,7 @@ nav ul li a:hover {
 
 
 /* ---------------------------Contact-------------------------- */
-.contact-h1 {
+#contact-h1 {
     margin-top: 200px;
     margin-bottom: -20px;
     margin-left: 184px;
@@ -1021,6 +1058,47 @@ nav .fas {
         display: none;
     }
 
+    #learn-more-mobile{
+        text-align: center;
+        display: block;
+        color: #fff;
+        margin-top: -120px;
+        margin-bottom: 60px;
+    }
+    
+    #learn-more-mobile svg{
+        animation: 6s cubic-bezier(.87, -0.41,.19, 1.44) infinite point-down;
+        fill: #007BFF;
+    
+    }
+
+    #our-work{
+        display: none;
+    }
+    
+    #learn-more-mobile p {
+        margin-bottom: .5rem;
+
+        font-size: 14px;
+    }
+
+    #learn-more-mobile p a{
+        color: white;
+        text-decoration: none;
+    }
+
+
+    
+    @keyframes point-down {
+        0%, 10%, 40%, 100% {
+            transform: translate3d(0, 0, 0);
+        }
+    
+        25% {
+            transform: translate3d(0, 1rem, 0);
+        }
+    }
+
     .magneto-h1 {
         /* font-size: medium; */
         width: 7rem;
@@ -1137,11 +1215,12 @@ nav .fas {
         transform: translateY(-5px);
     }
 
-    .contact-h1{
+    #contact-h1{
         font-size: 32px;
         font-weight: 600;
-        margin-top: 100px;
-        margin-left: 40px;
+        margin-top: 140px;
+        margin-left: 32px;
+        margin-bottom: -28px;
     }
     
     .contact-left p {
