@@ -1,15 +1,21 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 18px;
+    /* font-family: 'Quicksand', sans-serif; */
+    line-height: 1.5;
+}
+
+header,
+.header-text h1 {
     font-family: 'Quicksand', sans-serif;
-    line-height: 1.35;
+    line-height: normal;
 }
 
 
@@ -93,36 +99,40 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #00D977;
+    color: #fff;
     text-decoration: none;
     font-size: 16px;
     position: relative;
     padding: 8px 14px;
     border-radius: 6px;
-    background-color: transparent;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    background-color: none;
+    transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 
 nav ul li a::after {
     content: '';
     width: 0;
-    height: 3px;
-    background: #007BFF;
+    height: 1px;
+    background: #ffffff;
     position: absolute;
-    left: 0;
-    bottom: -6px;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
     transition: 0.5s;
 }
 
-/* nav ul li a:hover::after{
-    width: 100%;
-} */
+nav ul li a:hover::after {
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 nav ul li a:hover {
-    background-color: rgba(255, 250, 250, 0.075);
-    transform: translateY(-3px);
-    box-shadow: -4px 4px 10px #0056B3;
+    /* background-color: #007bff54; */
+    /* transform: translateY(-3px); */
+    /* box-shadow: -4px 4px 10px #00d97757; */
+    color: #00D977;
 }
 
 /* Mobile Menu */
@@ -146,19 +156,19 @@ nav ul li a:hover {
 .header-text {
     margin-top: 12%;
     font-size: 30px;
+
+
+
 }
 
 .header-text h1 {
-    font-size: 54px;
+    font-size: 50px;
     margin-top: -15px;
-    font-weight: 600;
-}
+    font-weight: 450;
+    animation: fadeIn 3s ease-in-out;
 
-/* .header-text h1 span{
-    color: #007BFF ;  
-    
-     color: #00D977;
-} */
+
+}
 
 
 /* Add keyframes for the fade-in animation */
@@ -177,31 +187,37 @@ nav ul li a:hover {
 }
 
 /* Apply the fade-in animation to the heading */
-.header-text h1 {
+/* .header-text h1 {
     animation: fadeIn 3s ease-in-out;
+} */
+
+.header-text .sub-title {
+    color: #007BFF;
+    /* animation: fadeIn -2s ease-in-out; */
+    font-weight: 700;
+    font-size: 56px;
 }
 
-.header-text h1 span {
-    color: #007BFF;
-    /* animation: fadeIn 2s ease-in-out; */
-}
 
 .typng-animation h2 {
+    /* font-family: 'Quicksand', sans-serif !important; */
     font-size: 2rem;
     letter-spacing: -1.1px;
     padding: 3.56px;
     position: relative;
-    font-weight: 500;
+    font-weight: 550;
     margin-top: 26px;
     color: #32CD32;
     margin-left: 0;
     margin-right: 0;
 }
 
+
 #cursor {
     color: #ffffff;
     border-radius: 50%;
-    
+    font-family: 'Quicksand', sans-serif;
+
 }
 
 
@@ -223,84 +239,77 @@ nav ul li a:hover {
 
 /* ============================================== new button========================== */
 .magneto {
-    /* Original properties */
     width: 8rem;
     height: 4rem;
     border-radius: 100px;
-    background-color: #ff005128;
+    background-color: #ff0051ce;
     color: white;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease-in-out;
     position: relative;
     bottom: -3rem;
     left: 0rem;
     right: 0rem;
     border: none;
     outline: none;
-    animation: none;
+    transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
-/* Create the rotating border using a pseudo-element */
+/* Create the rotating glow using a pseudo-element */
 .magneto::before {
     content: '';
     position: absolute;
     width: calc(100% + 10px);
     height: calc(100% + 10px);
-    border-top: 1px solid #007BFF;
     border-radius: 100px;
-    /* animation: spin 1s linear infinite; */
+    /* border: 2px solid rgba(255, 0, 81, 0.5); */
+    /* Border glow */
+    box-shadow: 0px 0px 20px rgba(255, 0, 81, 0.502);
 }
 
-/* Hover effect */
+
+
+/* Hover effect for button */
 .magneto:hover {
-    background-color: #ff0051b0;
-
+    background-color: #fff;
+    /* color: #ff0051;
+    box-shadow: 0px 0px 25px rgba(255, 0, 81, 0.5), 0px 0px 50px rgba(255, 0, 81, 0.3); */
+    color: transparent;
+    box-shadow: none;
+    font-size: medium;
 }
 
-/* Stop the rotation on hover without resetting the position */
 .magneto:hover::before {
-    animation-play-state: paused;
-    /* Pauses the animation at the current position */
+    /* box-shadow: 0px 0px 40px rgba(255, 0, 81, 0.8); */
+    box-shadow: none;
 }
 
 .magneto .text {
-    letter-spacing: 0.07rem;
     transition: color 0.3s ease-in-out;
-    animation: breathe 2s ease-in-out infinite;
-
+    animation: breathe 1.9s ease-in-out infinite;
 }
 
-/* Change text color on hover */
+/* Breathing effect for text */
+@keyframes breathe {
+    0% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+/* Change text color and stop animation on hover */
 .magneto:hover .text {
-    color: #fff;
+    color: #ff0051;
     animation: none;
 }
 
-/* Circular spinning border animation */
-/* @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-} */
-
-/* Breathing keyframes */
-@keyframes breathe {
-
-    0%,
-    100% {
-        transform: scale(0.9);
-    }
-
-    50% {
-        transform: scale(1.18);
-    }
-}
 
 
 
@@ -353,35 +362,56 @@ nav ul li a:hover {
     width: 8rem;
     height: 8rem;
     border-radius: 50%;
-    border: 3px solid #00D977;
-    background-color: white;
-    /* Default background color */
-    color: black;
+    background: radial-gradient(circle at 30% 30%, #e0e0e0 30%, #b0b0b0 70%, #808080 100%);
+    /* Base moon surface with light to dark gray transition */
+    color: white;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: border 0.2s ease-in-out, background 0.4s ease-in-out;
     position: relative;
     bottom: 3rem;
     left: 0rem;
+
+    /* Moon craters using radial shadows and light texture */
+    box-shadow: 
+        inset 0 0 20px rgba(0, 0, 0, 0.3), /* Inner shadow for depth */
+        10px 10px 15px rgba(0, 0, 0, 0.4), /* Outer shadow for moon glow */
+        -10px -10px 10px rgba(255, 255, 255, 0.1), /* Light shine on the top-left */
+        0px 0px 40px rgba(200, 200, 255, 0.1); /* Soft moonlight glow */
+    transition: box-shadow 0.4s ease-in-out, background 0.4s ease-in-out;
 }
 
 .magneto-h1 .text {
     transition: color 0.5s ease-in-out;
-
+    color: #080808;
 }
 
 .magneto-h1:hover {
-    background: #007BFF;
-    /* border: 0.5px solid #00D977; */
-    border: none;
-
+    /* Sun effect (already looking good, small tweaks for smooth transition) */
+    background: radial-gradient(circle at 50% 50%, #ffd700 20%, #ffa500 80%);
+    
+    /* Slightly reduced sun glow for a smoother look */
+    box-shadow: 0px 0px 30px rgba(255, 200, 0, 0.4), 0px 0px 50px rgba(255, 160, 0, 0.3);
 }
 
 .magneto-h1:hover .text {
     color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -391,10 +421,17 @@ nav ul li a:hover {
     margin: 20px 0 40px;
 }
 
+.tab-titles p {
+    color: #e4e5e7;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+}
+
+
 .tab-links {
     margin-right: 50px;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     position: relative;
 }
@@ -404,14 +441,21 @@ nav ul li a:hover {
     width: 0;
     height: 3px;
     background: #007BFF;
+    color: #e4e5e7;
     position: absolute;
-    left: 0;
+    left: 50%;
     bottom: -8px;
     transition: 0.5s;
+    transform: translateX(-50%);
+
 }
 
+/* .tab-links:hover::after {} */
+
+
 .tab-links.active-link::after {
-    width: 60%;
+    width: 70%;
+
 }
 
 .tab-contents ul li {
@@ -444,10 +488,14 @@ nav ul li a:hover {
 
 
 /* ------------------------------===========================services==========================-----=================-------------------- */
+
 #services {
     padding: 30px 0;
     /* background: #f5f5f5; */
+
+
 }
+
 
 #services .sub-title {
     margin-top: 40px;
@@ -462,14 +510,24 @@ nav ul li a:hover {
 }
 
 .services-list div {
-    /* background: #262626; */
+    background: #26262673;
+    /* border: 0.5px outset #007BFF; */
+    border: none;
+    /* box-shadow: 0px 0px 14px rgba(0, 123, 255, 0.674); */
+
+
     padding: 42px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 300;
-    border-radius: 10px;
+    border-radius: 16px;
     transition: background 0.5s, transform 0.5s;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* .services-list div p:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+} */
 
 .services-list div i {
     font-size: 46px;
@@ -478,11 +536,29 @@ nav ul li a:hover {
     /* color: #00FFC3; */
 }
 
+.icon {
+    transition: color 0.4s ease-in-out;
+}
+
+.fa-server:hover {
+    color: #E44D26;
+}
+
+.fa-docker:hover {
+    color: #2496ED;
+}
+
+.fa-cloud:hover {
+    color: #5CBBF6;
+}
+
+
+
 .services-list div h2 {
     font-size: 26px;
-    font-weight: 400;
+    font-weight: 501;
     margin-bottom: 16px;
-    color: #00FFC3;
+    color: #00D977;
 }
 
 /* .services-list div a{
@@ -493,19 +569,20 @@ nav ul li a:hover {
     display: inline-block;
 } */
 .services-list div:hover {
-    /* background: #007BFF ; */
-    background: #007BFF;
+    /* background: #007BFF; */
     background: transparent;
     /* transform: translateY(-10px); */
-    transform: translate3d(5px, -12px, 0) scale3d(1.1, 1.1, 1);
-    box-shadow: 0px 0px 30px rgba(0, 123, 255, 0.555);
-    /* Neon green glow */
+    transform: translate3d(0px, -20px, 0);
+    /* box-shadow: 0px 10px 20px rgb(0, 123, 255); */
+    box-shadow: 0px 0px 14px rgba(0, 123, 255, 0.832);
+
+    cursor: pointer;
 
 }
 
 
 /* -------------------=====================portfolio===================================------------- */
-#portfolio {
+/* #portfolio {
     padding: 50px 0;
 
 }
@@ -553,12 +630,12 @@ nav ul li a:hover {
     text-align: center;
     font-size: 13px;
     transition: height 0.5s;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  */
 }
 
 .layer p {
     word-spacing: normal;
-    line-height: normal;
+    font-size: medium;
+    line-height: 1.5;
     text-align: justify;
 }
 
@@ -602,35 +679,60 @@ nav ul li a:hover {
 
 .btn:hover {
     background: #007BFF;
-}
+} */
 
 
 
 /* ---------------------------Contact-------------------------- */
-#contact .sub-title {
-    margin-top: 35px;
+.contact-h1 {
+    margin-top: 200px;
     margin-bottom: -20px;
+    margin-left: 184px;
+    /* padding: 10px 10px%; */
 }
+
+#contact {
+    margin-top: 22px;
+    margin-bottom: -20px;
+    padding: 10px 0;
+    /* background: radial-gradient(circle, rgba(128, 128, 128, 0), rgba(128, 128, 128, 0) 70%);  */
+    background: rgba(128, 128, 128, 0.415);
+
+    transition: background-color 0.8s ease-out;
+}
+
+
+
+/* #contact .sub-title {
+} */
 
 .contact-left {
     flex-basis: 35%;
+    margin-top: 10px;
+    position: relative;
 }
 
 .contact-right {
     flex-basis: 60%;
+    margin-top: 5px;
 }
 
 .contact-left p {
-    margin-top: 20px;
+    margin-top: 18px;
     font-size: 14px;
+    color: white;
+    font-weight: 510;
+    margin-right: 10px;
+
 }
 
 .contact-left p i {
     /* color: #007BFF ; */
-    color: #007BFF;
+    color: #00BFFF;
     margin-right: 15px;
     font-size: 23px;
 }
+
 
 .social-icons {
     margin-top: 30px;
@@ -640,50 +742,66 @@ nav ul li a:hover {
     text-decoration: none;
     font-size: 24px;
     margin-right: 14px;
-    color: #ababab;
+    color: #ffffff;
     display: inline-block;
     transition: transform 0.5s;
 }
 
 .social-icons a:hover {
-    color: #339CFF;
-    transform: translateY(-5px);
+    /* color: #00BFFF ; */
+    transform: translateY(-6px);
 }
+
+.social-icons a:hover i.fab.fa-facebook {
+    color: #1877F2;
+    /* Facebook blue */
+}
+
+.social-icons a:hover i.fab.fa-linkedin {
+    color: #0A66C2;
+    /* LinkedIn blue */
+}
+
+.social-icons a:hover i.fab.fa-github {
+    color: #181717;
+    /* GitHub black */
+}
+
+.social-icons a i {
+    transition: color 0.3s ease;
+}
+
 
 /* Default Button Styles */
 .btn.btn2 {
     display: inline-block;
-    background: linear-gradient(135deg, #007BFF, #0056B3);
-    color: white;
+    background: rgb(47, 47, 47);
+    border: 1px solid #00BFFF;
+    color: #ffffff;
     /* padding: 10px 20px; */
     border-radius: 5px;
-    border: none;
+    /* border: none; */
     text-transform: uppercase;
+    font-weight: 510;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    /* Smooth transition for all changes */
-    box-shadow: 0px 5px 15px rgba(0, 91, 187, 0.2);
-    /* Subtle shadow */
+    /* box-shadow: 0px 5px 15px rgba(0, 91, 187, 0.2); */
 }
 
 /* Hover Effects */
 .btn.btn2:hover {
-    background: linear-gradient(135deg, #0056B3, #007BFF);
-    /* Invert gradient colors on hover */
-    transform: scale(1.09);
-    /* Slight zoom effect */
-    box-shadow: 0px 10px 20px rgba(0, 91, 187, 0.4);
-    /* More pronounced shadow */
+    background: #00BFFF;
+    transform: scale(0.97);
+    color: white;
+    /* border: none; */
 }
 
 /* Active Button (on click) */
-.btn.btn2:active {
+/* .btn.btn2:active {
     transform: scale(0.98);
-    /* Slight shrink effect on click */
     box-shadow: 0px 5px 10px rgba(0, 91, 187, 0.3);
-    /* Less shadow on click */
-}
+} */
 
 
 .contact-right form {
@@ -698,9 +816,9 @@ form textarea {
     border: 2px solid transparent;
     /* Start with a transparent border */
     outline: none;
-    background: #262626;
-    padding: 12px;
-    margin: 12px 0;
+    background: #bebebe;
+    padding: 8px;
+    margin: 8px 0;
     color: #fff;
     font-size: 14px;
     border-radius: 6px;
@@ -710,22 +828,30 @@ form textarea {
 /* Hover effect - inner border */
 form input:hover,
 form textarea:hover {
-    box-shadow: inset 0 0 0 0.5px #fff;
-    /* Creates the effect of an inner border */
+    box-shadow: inset 0 0 0 1.5px #000000;
+    /* background: #00000096; */
+    cursor: text;
+
 }
 
 /* Focus effect - inner border */
 form input:focus,
 form textarea:focus {
-    box-shadow: inset 0 0 0 1.5px #007BFF;
-    /* Keeps the inner border on focus */
+    box-shadow: inset 0 0 0 0.5px #fff;
+    background: #00000096;
+
+}
+
+form .btn.btn2{
+    box-shadow: none;
 }
 
 
 form .btn2 {
-    padding: 10px 40px;
+    padding: 8px 26px;
     font-size: 14px;
-    margin-top: 8px;
+    margin-top: 0;
+    margin-bottom: 12px;
     cursor: pointer;
 }
 
@@ -745,6 +871,7 @@ form .btn2 {
 .copyright-name {
     color: #00D977;
     font-size: 16px;
+    /* margin-top: auto; */
 }
 
 
@@ -766,7 +893,7 @@ nav .fas {
     }
 
     .header-text h1 {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     /* Add keyframes for the fade-in animation */
@@ -802,10 +929,10 @@ nav .fas {
         animation: fadeIn 3s ease-in-out;
     }
 
-    .header-text h1 span {
+    /* .header-text .sub-title {
         color: #007BFF;
-        /* animation: fadeIn 2s ease-in-out; */
-    }
+        font-size: 50px;
+    } */
 
     /* ----------------changes---------------- */
 
@@ -815,13 +942,15 @@ nav .fas {
         /* margin: 7.12px;  */
         padding: 3.56px;
         position: relative;
-        font-weight: 600;
+        font-weight: 550;
         /* margin-right: 620px; */
         margin-top: 26px;
         color: #32CD32;
         margin-left: 0;
         margin-right: 0;
     }
+
+
 
     .magneto {
         display: none;
@@ -840,10 +969,11 @@ nav .fas {
     nav .fas {
         display: block;
         font-size: 20px;
+        color: #fff;
     }
 
     nav ul {
-        background: linear-gradient(154deg, #007bff, #00d97742);
+        background: #007bff;
         position: fixed;
         top: 0;
         right: -200px;
@@ -853,7 +983,7 @@ nav .fas {
         z-index: 2;
         transition: right 0.5s;
         border-radius: 10px 0 0 10px;
-        opacity: 0.95;
+        opacity: 0.9;
     }
 
 
@@ -867,12 +997,15 @@ nav .fas {
         top: 25px;
         left: 25px;
         cursor: pointer;
+        color: #eceaea;
     }
 
     nav ul li a {
-        color: #fff;
+        color: #ffffff;
         /* display: none; */
         font-size: 15px;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
 
     }
 
@@ -881,6 +1014,11 @@ nav .fas {
         transform: none;
         box-shadow: none;
         color: rgba(199, 146, 31, 0.932);
+
+    }
+
+    nav ul li a::after {
+        display: none;
     }
 
     .magneto-h1 {
@@ -936,7 +1074,7 @@ nav .fas {
     }
 
 
-    .layer {
+    /* .layer {
         width: 110%;
         left: -5%;
     }
@@ -958,7 +1096,7 @@ nav .fas {
         line-height: 42px;
         width: 42px;
         height: 42px;
-    }
+    } */
 
     .about-col-1,
     .about-col-2 {
@@ -973,8 +1111,14 @@ nav .fas {
         font-size: 13px;
     }
 
+    .tab-titles p {
+        font-size: 16px;
+        font-family: 'Quicksand', sans-serif;
+    }
+
     .tab-links {
         font-size: 15px;
+
         margin-right: 20px;
     }
 
@@ -993,6 +1137,13 @@ nav .fas {
         transform: translateY(-5px);
     }
 
+    .contact-h1{
+        font-size: 32px;
+        font-weight: 600;
+        margin-top: 100px;
+        margin-left: 40px;
+    }
+    
     .contact-left p {
         font-size: small;
     }
@@ -1060,7 +1211,7 @@ nav .fas {
 
 #msg {
     color: #61b752;
-    margin-top: -20px;
+    margin-top: auto;
     display: block;
     font-size: small;
 }
